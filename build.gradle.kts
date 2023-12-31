@@ -38,7 +38,7 @@ subprojects {
         options.encoding = Charsets.UTF_8.name()
         options.release.set(17)
     }
-    tasks.withtype<Javadoc> {
+    tasks.withType<Javadoc> {
         failOnError = false
     }
     tasks.withType<Javadoc> {

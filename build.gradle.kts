@@ -39,10 +39,7 @@ subprojects {
         options.release.set(17)
     }
     tasks.withType<Javadoc> {
-        options.failOnError = false
-    }
-    tasks.withType<Javadoc> {
-        options.encoding = Charsets.UTF_8.name()
+        enabled = false
     }
     tasks.withType<ProcessResources> {
         filteringCharset = Charsets.UTF_8.name()

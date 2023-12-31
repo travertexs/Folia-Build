@@ -38,10 +38,7 @@ subprojects {
         options.encoding = Charsets.UTF_8.name()
         options.release.set(17)
     }
-    tasks.withtype(Javadoc).all {
-        enabled = false
-    }
-    tasks.withtype(Javadoc) {
+    tasks.withtype<Javadoc> {
         fallOnError = false
     }
     tasks.withType<Javadoc> {

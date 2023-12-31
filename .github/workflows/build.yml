@@ -22,9 +22,21 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
+
       - name: Configure Git User Details
         run: git config --global user.email "actions@github.com" && git config --global user.name "Github Actions"
+        
       - name: Apply Patches
         run: ./gradlew applyPatches
+
       - name: Build
         run: ./gradlew build
+
+      - name: Jar
+        run: ./gradlew createMojmapPaperclipJar
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: Folia
+          path: build/libs/*
